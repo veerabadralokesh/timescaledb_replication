@@ -2,8 +2,6 @@
 
 exit 0
 
-## https://docs.timescale.com/self-hosted/latest/install/installation-linux/
-
 
 apt install gnupg postgresql-common apt-transport-https lsb-release wget
 
@@ -61,5 +59,3 @@ systemctl start postgresql
 
 less postgresql-14-main.log
 
-
-############################################

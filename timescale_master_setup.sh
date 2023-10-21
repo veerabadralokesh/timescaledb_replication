@@ -2,8 +2,6 @@
 
 exit 0
 
-## https://docs.timescale.com/self-hosted/latest/install/installation-linux/
-
 
 apt install gnupg postgresql-common apt-transport-https lsb-release wget
 
@@ -51,11 +49,6 @@ CREATE TABLE public.llab_063 (
 );
 CREATE INDEX llab_063_time_idx ON public.llab_063 USING btree ("time" DESC);
 
-# create trigger ts_insert_blocker before
-# insert
-#     on
-#     public.llab_063 for each row execute function _timescaledb_internal.insert_blocker();
-
 \d
 
 \d+
@@ -73,7 +66,6 @@ CREATE TABLE public.llab_063_index (
 \dt
 
 ### setup replication user
-# https://docs.timescale.com/self-hosted/latest/replication-and-ha/configure-replication/
 
 CREATE ROLE repuser WITH REPLICATION PASSWORD 'password' LOGIN;
 
